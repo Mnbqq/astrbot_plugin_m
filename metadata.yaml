@@ -1,0 +1,26 @@
+# 插件核心标识（唯一不可重复，需与插件目录名前缀一致）
+name: "astrbot_plugin_m"
+# 插件作者信息
+author: "Mnbqq"
+# 插件功能描述（将显示在WebUI插件列表中）
+description: "AI自动识别对话中的歌名，支持发送音乐卡片、链接、语音、音频文件，集成网易云音乐数据接口"
+# 插件版本（遵循语义化版本：主版本.次版本.修订号）
+version: "2.1.0"
+# 插件仓库地址（用于溯源或更新，可填写GitHub/GitLab仓库链接）
+repository: "https://github.com/Mnbqq/astrbot_plugin_m"
+# 插件依赖（可选，若需额外安装Python包，需填写依赖名及版本）
+dependencies:
+  - "aiohttp>=3.9.0"  # 异步HTTP请求依赖（文件下载、API调用）
+  - "requests>=2.31.0"  # 同步HTTP请求依赖（封面下载、网络测试）
+  - "jinja2>=3.1.0"  # 若保留歌词图片生成，需此模板依赖（draw.py可能用到）
+# 插件类型（可选，用于WebUI分类，取值：utility工具类、media媒体类、ai智能类等）
+type: "media"
+# 是否为系统保留插件（不可删除，默认false，自定义插件无需设置为true）
+reserved: false
+# 插件启用状态（默认true，加载后自动启用；设为false需手动在WebUI启用）
+activated: true
+# 插件更新日志（可选，记录版本变更内容，将显示在WebUI插件详情中）
+changelog:
+  - "v2.1.0: 融合优化版文件发送逻辑，新增URL验证、网络检测、文件完整性校验，优化临时文件清理机制"
+  - "v2.0.0: 移除原有点歌命令与按钮功能，新增LLM意图识别，支持自动识别歌名与用户需求"
+  - "v1.0.1: 初始版本，支持网易云音乐搜索、热评、歌词发送"

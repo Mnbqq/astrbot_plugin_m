@@ -1,0 +1,39 @@
+{
+    "auto_cleanup": {
+        "description": "是否自动清理临时音频文件",
+        "type": "bool",
+        "default": true,
+        "hint": "开启后可避免占用过多存储空间"
+    },
+    "default_api": {
+        "description": "默认音乐数据API",
+        "type": "string",
+        "options": ["netease", "netease_nodejs"],
+        "default": "netease_nodejs",
+        "hint": "netease：公开API；netease_nodejs：适配https://163api.qijieya.cn"
+    },
+    "nodejs_base_url": {
+        "description": "NodeJS网易云API地址（仅netease_nodejs生效）",
+        "type": "string",
+        "default": "https://163api.qijieya.cn",
+        "hint": "无需加后缀，如https://163api.qijieya.cn"
+    },
+    "enable_comments": {
+        "description": "是否自动发送歌曲热评",
+        "type": "bool",
+        "default": true,
+        "hint": "开启后识别歌名成功时发送随机热评"
+    },
+    "enable_lyrics": {
+        "description": "是否自动发送歌词图片",
+        "type": "bool",
+        "default": false,
+        "hint": "需确保draw.py文件存在"
+    },
+    "analysis_prob": {
+        "description": "消息识别概率（0-1）",
+        "type": "float",
+        "default": 0.9,
+        "hint": "1=100%触发AI识别，0=不触发"
+    }
+}
