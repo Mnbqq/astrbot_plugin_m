@@ -198,8 +198,7 @@ class MusicPlugin(Star, FileSenderMixin):
             return "无歌名", "识别失败"
 
     @filter.event_message_type(filter.EventMessageType.ALL)
-    async def on_all_message(self, message: dict, context: Dict[str, Any]) -> Optional[Union[Dict, List[Dict]]]:
-        file_path = None  # 初始化file_path
+    async def on_all_message(self, event: AstrMessageEvent):
         """主消息监听逻辑：融合AI识别与优化版文件发送"""
         # 概率触发（避免频繁调用LLM）
         if random.random() > self.analysis_prob:
@@ -301,7 +300,7 @@ class MusicPlugin(Star, FileSenderMixin):
         finally:
             # 7. 临时文件清理
             if self.auto_cleanup and file_path and isinstance(file_path, Path):
-                file_path.unlink(missing_ok=True)
+                await self.cleanup_file(file_path)
 
     @staticmethod
     def format_time(duration_ms):
