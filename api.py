@@ -136,7 +136,7 @@ class NetEaseMusicAPINodeJs:
                 "Content-Type": "application/json",
                 "Accept": "application/json, text/plain, */*"
             },
-            connector=aiohttp.TCPConnector(ssl=False)  # 避免 SSL 证书验证问题（可选，视 API 情况调整）
+            connector=aiohttp.TCPConnector()  # 避免 SSL 证书验证问题（可选，视 API 情况调整）
         )
         logger.debug(f"NodeJS API 初始化完成 | BaseURL: {self.base_url}")
 
