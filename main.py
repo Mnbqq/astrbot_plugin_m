@@ -3,7 +3,6 @@ import random
 import aiofiles
 import aiohttp
 import traceback
-import requests
 import asyncio
 from astrbot.api.event import filter, AstrMessageEvent
 import astrbot.api.message_components as Comp
@@ -199,7 +198,8 @@ class MusicPlugin(Star, FileSenderMixin):
             return "无歌名", "识别失败"
 
     @filter.event_message_type(filter.EventMessageType.ALL)
-    async def on_all_message(self, event: AstrMessageEvent):
+    async def on_all_message(self, message: dict, context: Dict[str, Any]) -> Optional[Union[Dict, List[Dict]]]:
+        file_path = None  # 初始化file_path
         """主消息监听逻辑：融合AI识别与优化版文件发送"""
         # 概率触发（避免频繁调用LLM）
         if random.random() > self.analysis_prob:
@@ -272,7 +272,7 @@ class MusicPlugin(Star, FileSenderMixin):
             elif intent == "发文件":
                 await event.send(event.plain_result(f"开始下载《{song_name}》，请稍候..."))
                 # 调用优化版下载方法
-                file_path = await self.download_file(audio_url, selected_song["name"])
+                file_path = await self.download_file(music_url, song_name)
                 if not file_path:
                     await event.send(event.plain_result(f"《{song_name}》下载失败，无法发送文件~"))
                     return
@@ -301,7 +301,7 @@ class MusicPlugin(Star, FileSenderMixin):
         finally:
             # 7. 临时文件清理
             if self.auto_cleanup and file_path and isinstance(file_path, Path):
-                await self.cleanup_file(file_path)
+                file_path.unlink(missing_ok=True)
 
     @staticmethod
     def format_time(duration_ms):
