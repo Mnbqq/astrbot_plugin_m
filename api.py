@@ -1,6 +1,6 @@
 import json
 import aiohttp
-from astrbot import logger
+from astrbot.api import logger
 
 # 网易云音乐加密参数（仅 NetEaseMusicAPI 类使用，NodeJS 版本无需依赖）
 PARAMS = "D33zyir4L/58v1qGPcIPjSee79KCzxBIBy507IYDB8EL7jEnp41aDIqpHBhowfQ6iT1Xoka8jD+0p44nRKNKUA0dv+n5RWPOO57dZLVrd+T1J/sNrTdzUhdHhoKRIgegVcXYjYu+CshdtCBe6WEJozBRlaHyLeJtGrABfMOEb4PqgI3h/uELC82S05NtewlbLZ3TOR/TIIhNV6hVTtqHDVHjkekrvEmJzT5pk1UY6r0="
