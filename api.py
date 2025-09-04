@@ -140,6 +140,13 @@ class NetEaseMusicAPINodeJs:
         )
         logger.debug(f"NodeJS API 初始化完成 | BaseURL: {self.base_url}")
 
+    # 新增：实现 close 方法，关闭 aiohttp 会话
+    async def close(self):
+        """关闭 aiohttp 会话，释放网络资源"""
+        if hasattr(self, 'session') and not self.session.closed:
+            await self.session.close()
+            logger.info("NetEaseMusicAPINodeJs 会话已关闭")
+
     async def _request(self, url: str, data: dict = {}, method: str = "GET"):
         """统一请求接口（适配 NodeJS API 格式）"""
         try:
