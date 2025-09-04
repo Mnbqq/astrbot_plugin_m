@@ -11,7 +11,7 @@ from astrbot.core.config.astrbot_config import AstrBotConfig
 from astrbot.core.message.components import Record, File
 from astrbot.core.message.message_event_result import MessageChain
 from astrbot import logger
-from data.plugins.astrbot_plugin_music.draw import draw_lyrics
+from data.plugins.astrbot_plugin_m.draw import draw_lyrics
 
 # 歌曲缓存目录
 SAVED_SONGS_DIR = Path(__file__).parent.resolve() / "songs"
