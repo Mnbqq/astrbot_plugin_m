@@ -12,3 +12,4 @@ repo: "https://github.com/Mnbqq/astrbot_plugin_m"
 dependencies:
   - "aiohttp>=3.9.0"  # 异步HTTP请求依赖（文件下载、API调用）
   - "requests>=2.31.0"  # 同步HTTP请求依赖（封面下载、网络测试）
+  - "jinja2>=3.1.0"  # 若保留歌词图片生成，需此模板依赖（draw.py可能用到）
