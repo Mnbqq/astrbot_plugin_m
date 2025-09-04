@@ -133,15 +133,16 @@ class FileSenderMixin:
     "https://github.com/Mnbqq/astrbot_plugin_m",
 )
 class MusicPlugin(Star, FileSenderMixin):
-    def __init__(self, context: Context, config: AstrBotConfig):
+    def __init__(self, context: Context, config: AstrBotConfig = None):
         super().__init__(context)
+        self.config = config or AstrBotConfig()
         # 基础配置
-        self.auto_cleanup = config.get("auto_cleanup", True)  # 自动清理临时文件
-        self.default_api = config.get("default_api", "netease")
-        self.nodejs_base_url = config.get("nodejs_base_url", "http://netease_cloud_music_api:3000")
-        self.enable_comments = config.get("enable_comments", True)
-        self.enable_lyrics = config.get("enable_lyrics", False)
-        self.analysis_prob = config.get("analysis_prob", 0.9)  # 消息识别概率
+        self.auto_cleanup = self.config.get("auto_cleanup", True)  # 自动清理临时文件
+        self.default_api = self.config.get("default_api", "netease")
+        self.nodejs_base_url = self.config.get("nodejs_base_url", "http://netease_cloud_music_api:3000")
+        self.enable_comments = self.config.get("enable_comments", True)
+        self.enable_lyrics = self.config.get("enable_lyrics", False)
+        self.analysis_prob = self.config.get("analysis_prob", 0.9)  # 消息识别概率
 
         # 初始化音乐API
         if self.default_api == "netease":
