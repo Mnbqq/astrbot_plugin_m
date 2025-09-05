@@ -1,7 +1,12 @@
+
+<div align="center">
+
+![:name](https://count.getloli.com/@astrbot_plugin_m?name=astrbot_plugin_m&theme=minecraft&padding=6&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)
+
 # AstrBot 智能音乐识别插件
  **本插件由豆包生成** 
 作者使用的是docker
- **当前音乐卡片出现问题，无法发送，等待修复**
+
 
 一款基于 AstrBot 生态的智能音乐插件，通过 **AI 大模型意图识别** 自动捕捉对话中的歌名，支持发送音乐卡片、播放链接、语音消息及音频文件，集成网易云音乐数据接口，无需手动输入指令即可完成音乐交互。
 
@@ -156,6 +161,19 @@ astrbot_plugin_music/
 | v2.0.0  | 2025-XX-XX     | 1. 移除原有点歌命令与按钮功能<br>2. 新增 LLM 意图识别，支持自动识别歌名与需求       |
 | v1.0.0  | 2025-XX-XX     | 1. 初始版本，支持网易云音乐搜索<br>2. 实现热评发送、歌词图片生成功能               |
 
+# TODO
+
+- [ ] 让LLM识别出用户意图，发送歌词/歌词1图片
+- [ ] 将网易云cookie，放到插件配置中
+- [ ] 想到在写
+
+
+## 👥 贡献指南
+
+- 🌟 Star 这个项目！（点右上角的星星，感谢支持！）
+- 🐛 提交 Issue 报告问题
+- 💡 提出新功能建议
+- 🔧 提交 Pull Request 改进代码
 
 ## 📞 反馈与维护
 - 插件仓库：[https://github.com/Mnbqq/astrbot_plugin_m](https://github.com/Mnbqq/astrbot_plugin_m)
