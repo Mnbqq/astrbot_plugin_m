@@ -272,7 +272,7 @@ class MusicPlugin(Star, FileSenderMixin):
             elif intent == "发文件":
                 await event.send(event.plain_result(f"开始下载《{song_name}》，请稍候..."))
                 # 调用优化版下载方法
-                file_path = await self.download_file(music_url, song_name)
+                file_path = await self.download_file(audio_url, song_name)
                 if not file_path:
                     await event.send(event.plain_result(f"《{song_name}》下载失败，无法发送文件~"))
                     return
