@@ -26,7 +26,7 @@
 
 ## 📋 目录结构
 ```
-astrbot_plugin_music/
+astrbot_plugin_m/
 ├── main.py              # 插件核心代码（AI识别+发送逻辑）
 ├── api.py               # 网易云音乐API封装（歌曲搜索/热评/歌词获取）
 ├── metadata.yaml        # 插件元数据（名称/版本/依赖等）
