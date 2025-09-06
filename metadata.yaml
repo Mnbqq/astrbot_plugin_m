@@ -5,7 +5,7 @@ author: "Mnbqq"
 # 插件功能描述（将显示在WebUI插件列表中）
 desc: "AI自动识别对话中的歌名，支持发送音乐卡片、链接、语音、音频文件，集成网易云音乐数据接口"
 # 插件版本（遵循语义化版本：主版本.次版本.修订号）
-version: "2.1.0"
+version: "2.1.1"
 # 插件仓库地址（用于溯源或更新，可填写GitHub/GitLab仓库链接）
 repo: "https://github.com/Mnbqq/astrbot_plugin_m"
 # 插件依赖（可选，若需额外安装Python包，需填写依赖名及版本）
